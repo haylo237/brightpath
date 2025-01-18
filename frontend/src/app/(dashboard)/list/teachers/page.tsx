@@ -1,3 +1,4 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -30,6 +31,11 @@ const columns = [
         header:"Subjects", 
         accessor:"subjects",
         className:"hidden md:table-cell",
+    },
+    {
+        header:"Classes",  
+        accessor:"classes",
+        className:"hidden lg:table-cell",
     },
     {
         header:"Phone", 
@@ -70,9 +76,10 @@ const TeacherListPage = () => {
                         </button>
                     </Link>
                     {role === "admin" && (
-                    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
-                        <Image src="/delete.png" alt="" width={16} height={16} />
-                    </button>
+               //     <button className="w-7 h-7 flex items-center justify-center rounded-full bg-lamaPurple">
+               //         <Image src="/delete.png" alt="" width={16} height={16} />
+               //     </button>
+                      <FormModal table="teacher" type="create" />
                     )}
                 </div>
             </td>
